@@ -5,15 +5,17 @@ using UnityEngine;
 public class MoverJugador : MonoBehaviour
 {
 
-    public int velocidad;
+    //public int velocidad;
     private Rigidbody2D fisicas;
     private bool facingRight;
+    private PleyerStats stats;
 
     // Start is called before the first frame update
     void Start()
     {
         facingRight = true;
         fisicas = gameObject.GetComponent<Rigidbody2D>();
+        stats = gameObject.GetComponent<PleyerStats>();
     }
 
     // Update is called once per frame
@@ -25,7 +27,7 @@ public class MoverJugador : MonoBehaviour
     public void Mover()
     {
         float entradaX = Input.GetAxis("Horizontal");
-        fisicas.velocity = new Vector2(entradaX * velocidad, fisicas.velocity.y);
+        fisicas.velocity = new Vector2(entradaX * stats.velocidad, fisicas.velocity.y);
     }
 
     private void Flip()
