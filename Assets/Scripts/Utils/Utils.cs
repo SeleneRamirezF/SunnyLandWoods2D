@@ -28,6 +28,14 @@ namespace Utils
 
             return (toca1.collider?.CompareTag("Floor") ?? false) || (toca2.collider?.CompareTag("Floor") ?? false) || (toca3.collider?.CompareTag("Floor") ?? false);
         }
+
+        public static void Flip(GameObject gameObject)
+        {
+            //facingRight = !facingRight;
+            Vector3 escala = gameObject.transform.localScale;
+            escala.x = escala.x * -1;
+            gameObject.transform.localScale = escala; //esto es lo que estamos modificando para el giro
+        }
     }
 }
 
