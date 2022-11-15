@@ -18,7 +18,7 @@ public class SaltoJugador : MonoBehaviour
         numSaltados = 0;
         //isInFloor = true;
         fisicas = gameObject.GetComponent<Rigidbody2D>();
-        stats = gameObject.GetComponent<PleyerStats>();
+        stats = GameObject.FindGameObjectWithTag("GameData").GetComponent<PleyerStats>();
     }
 
     // Update is called once per frame
@@ -35,10 +35,10 @@ public class SaltoJugador : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (numSaltados < stats.numeroSaltos)
+            if (numSaltados < stats.jumpMax)
             {
                 numSaltados++;
-                fisicas.AddForce(Vector2.up * stats.fuerzaSalto, ForceMode2D.Impulse);
+                fisicas.AddForce(Vector2.up * stats.jumpForce, ForceMode2D.Impulse);
             }
             numSaltados++;
         }

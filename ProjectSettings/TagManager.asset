@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - Enemigos/Patrulla
+  - GameData
   layers:
   - Default
   - TransparentFX
