@@ -16,7 +16,7 @@ public class ControlNivel : MonoBehaviour
     }
 
     //Metodos
-    public virtual void ColisionEnemigo(int danio){}
+    public virtual void PlayerRecivirDanio(int danio, GameObject origenDanio){}
     public virtual void SumarPuntos(int p) { }
 
     public virtual IEnumerator ReiniciarNivel()

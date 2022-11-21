@@ -13,11 +13,19 @@ public class EnemigoColisionController : MonoBehaviour
         if(!control) Debug.LogError("ERROR: Debes tener un Controlador de Nivel en la escena");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            control.ColisionEnemigo(danio);
+            control.PlayerRecivirDanio(danio, gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            control.PlayerRecivirDanio(danio, gameObject);
         }
     }
 }

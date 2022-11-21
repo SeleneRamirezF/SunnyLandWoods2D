@@ -12,5 +12,10 @@ public class PleyerStats : MonoBehaviour
     public int jumpMax;
     public int jumpForce;
     public int speed;
+    public int forceKnockBack;
+
+    //Invulnerabilidad
+    public bool invulnerable;    
+    public int segundosInvulnerable;
 
 }
